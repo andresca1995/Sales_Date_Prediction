@@ -9,17 +9,17 @@
     </mat-card-header>
     <mat-card-content >
       
-        <table mat-table [dataSource]="datasource" class="expense-table">
+        <table mat-table [dataSource]="datasource" class="expense-table" matSort>
             <ng-container matColumnDef="companyname">
-                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                <th mat-header-cell *matHeaderCellDef  mat-sort-header>Nombre</th>
                 <th mat-cell *matCellDef=" let item">{{item.companyname}}</th>
             </ng-container>
             <ng-container matColumnDef="LastOrderDate">
-                <th mat-header-cell *matHeaderCellDef>LastOrderDate</th>
+                <th mat-header-cell *matHeaderCellDef  mat-sort-header>LastOrderDate</th>
                 <th mat-cell *matCellDef=" let item">{{item.LastOrderDate | date: 'M-dd-yyyy'}}</th>
             </ng-container>
             <ng-container matColumnDef="PredictedOrder">
-                <th mat-header-cell *matHeaderCellDef>PredictedOrder</th>
+                <th mat-header-cell *matHeaderCellDef  mat-sort-header>PredictedOrder</th>
                 <th mat-cell *matCellDef=" let item">{{item.PredictedOrder | date: 'M-dd-yyyy'}}</th>
             </ng-container>
             <ng-container matColumnDef="Opciones">

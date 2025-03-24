@@ -12,9 +12,11 @@ import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { ListComponent } from '../../dialogs/list/list.component';
 import { AddComponent } from '../../dialogs/add/add.component';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+
 @Component({
   selector: 'app-home',
-  imports: [MatTableModule,MatPaginatorModule,MatSnackBarModule,MatButtonModule,MatCardModule,MatInputModule,CommonModule],
+  imports: [MatTableModule,MatPaginatorModule,MatSortModule,MatSnackBarModule,MatButtonModule,MatCardModule,MatInputModule,CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -29,6 +31,11 @@ export class HomeComponent {
   @ViewChild(MatPaginator) paginator!:MatPaginator;
 
   sales = this.salesservice.salesdate;
+  @ViewChild(MatSort) sort!: MatSort;
+
+  ngAfterViewInit() {
+    this.datasource.sort = this.sort; // Asignar el ordenamiento
+  }
 
   constructor(){
     this.salesservice.getsalesdate();
