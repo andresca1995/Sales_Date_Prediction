@@ -1,0 +1,16 @@
+<mat-drawer-container class="nav-container">
+  <mat-drawer 
+  mode="side" 
+  opened
+  class="sidenav">
+  Inicio
+    <mat-nav-list>
+      <mat-list-item [routerLink]="['/inicio']" routerLinkActive="router-link-active" >Sales Date Prediction</mat-list-item>
+      <mat-list-item [routerLink]="['/d3']" routerLinkActive="router-link-active" >graphic d3</mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+      <router-outlet />
+  </mat-drawer-content>
+</mat-drawer-container>
+

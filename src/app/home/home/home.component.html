@@ -1,0 +1,51 @@
+<mat-card>
+    <mat-card-header class="card-header">
+        <h1>Costumers</h1>
+
+        <mat-form-field>
+            <mat-label>Custom name</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+          </mat-form-field>
+    </mat-card-header>
+    <mat-card-content >
+      
+        <table mat-table [dataSource]="datasource" class="expense-table">
+            <ng-container matColumnDef="companyname">
+                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                <th mat-cell *matCellDef=" let item">{{item.companyname}}</th>
+            </ng-container>
+            <ng-container matColumnDef="LastOrderDate">
+                <th mat-header-cell *matHeaderCellDef>LastOrderDate</th>
+                <th mat-cell *matCellDef=" let item">{{item.LastOrderDate | date: 'M-dd-yyyy'}}</th>
+            </ng-container>
+            <ng-container matColumnDef="PredictedOrder">
+                <th mat-header-cell *matHeaderCellDef>PredictedOrder</th>
+                <th mat-cell *matCellDef=" let item">{{item.PredictedOrder | date: 'M-dd-yyyy'}}</th>
+            </ng-container>
+            <ng-container matColumnDef="Opciones">
+                <th mat-header-cell *matHeaderCellDef>Opciones</th>
+                <th mat-cell *matCellDef=" let item">
+                    <div class="flex-container">
+                        <div  class="btn">
+                            <button mat-flat-button class="list" (click)="dialoglist(item.custid)">view orders</button>
+                        </div>
+                        <div  class="btn">
+                            <button mat-flat-button class="add" (click)="dialogadd(item.custid)">New order</button>
+                        </div>
+                    </div>
+                </th>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displaycolumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displaycolumns"></tr>
+        </table>
+    </mat-card-content>
+        <mat-card-actions class="card-actions">
+            <mat-paginator [length]="totalitems" 
+            pageSize="pageSize" 
+            [pageSizeOptions]="[5,10,15,20]"
+            > 
+        </mat-paginator>
+    </mat-card-actions>
+</mat-card>
+

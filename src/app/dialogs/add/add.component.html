@@ -1,0 +1,124 @@
+<h2 mat-dialog-title>Customer AHPOP-Ordes</h2>
+<mat-dialog-content>
+  <h2>Order</h2>
+  <form class="flex-column" [formGroup]="myForm" (submit)="onSubmit()">
+    <div class="flex-row">
+      <mat-form-field class="sm-6">
+        <mat-label>Employee</mat-label>
+        <mat-select formControlName="Empid">
+          <mat-option *ngFor="let item of employeelist" [value]="item.Empid">{{
+            item.FullName
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="sm-6">
+        <mat-label>Shipper</mat-label>
+        <mat-select formControlName="Shipperid">
+          <mat-option
+            *ngFor="let item of shipperslist"
+            [value]="item.Shipperid"
+            >{{ item.Companyname }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="flex-row">
+      <mat-form-field class="sm-12">
+        <mat-label>Ship name</mat-label>
+        <input matInput formControlName="Shipname" />
+      </mat-form-field>
+    </div>
+    <div class="flex-row">
+      <mat-form-field class="sm-4">
+        <mat-label>Ship address</mat-label>
+        <input matInput formControlName="Shipaddress" />
+      </mat-form-field>
+      <mat-form-field class="sm-4">
+        <mat-label>Ship city</mat-label>
+        <input matInput formControlName="Shipcity" />
+      </mat-form-field>
+      <mat-form-field class="sm-4">
+        <mat-label>Ship country</mat-label>
+        <input matInput formControlName="Shipcountry" />
+      </mat-form-field>
+    </div>
+    <div class="flex-row">
+      <mat-form-field class="sm-4">
+        <mat-label>Order date</mat-label>
+        <input matInput [matDatepicker]="picker1" formControlName="Orderdate" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker1"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="sm-4">
+        <mat-label>Required date</mat-label>
+        <input matInput [matDatepicker]="picker2"  formControlName="Requireddate" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker2"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="sm-4">
+        <mat-label>Shipped date</mat-label>
+        <input matInput [matDatepicker]="picker3"  formControlName="Shippeddate"/>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker3"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker3></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="flex-row">
+      <mat-form-field class="sm-12" floatLabel="always">
+        <mat-label>Freight</mat-label>
+        <input matInput type="number" class="right-align"  formControlName="Freight" placeholder="0" />
+        <span matTextPrefix>$&nbsp;</span>
+      </mat-form-field>
+    </div>
+    <hr class="sep" />
+    <h2>Order Details</h2>
+    <div class="flex-row">
+      <mat-form-field class="sm-12">
+        <mat-label>Product</mat-label>
+        <mat-select  formControlName="Productid">
+          <mat-option
+            *ngFor="let item of productslist"
+            [value]="item.Productid"
+            >{{ item.Productname }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="flex-row">
+      <mat-form-field class="sm-4">
+        <mat-form-field class="sm-12" floatLabel="always">
+          <mat-label>Unit price</mat-label>
+          <input matInput  formControlName="Unitprice" type="number" class="right-align" placeholder="0" />
+          <span matTextPrefix>$&nbsp;</span>
+        </mat-form-field>
+      </mat-form-field>
+      <mat-form-field class="sm-4">
+        <mat-label>Quantity</mat-label>
+        <input matInput  formControlName="Qty" type="number" class="right-align" placeholder="0" />
+      </mat-form-field>
+      <mat-form-field class="sm-4">
+        <mat-label>Discount</mat-label>
+        <input matInput  formControlName="Discount" type="number" class="right-align" placeholder="0" />
+      </mat-form-field>
+    </div>
+    <div class="flex-container">
+      <div class="btn">
+        <button mat-flat-button class="list" type="submit" [disabled]="myForm.invalid">save</button>
+      </div>
+      <div class="btn">
+        <button mat-flat-button mat-dialog-close class="add">Cancel</button>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>

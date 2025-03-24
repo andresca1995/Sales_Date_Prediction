@@ -1,0 +1,33 @@
+
+.mat-mdc-card-header {
+    display: flex;
+    padding: 16px 16px 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.list{
+    background-color: #1db636 !important;
+    color: #FFFFFF !important; 
+  
+  }
+  
+  .add{
+    background-color: #cc3939 !important;
+    color: #FFFFFF !important; 
+  
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn{
+    padding: 0% 10px;
+  }
+
+  
+  

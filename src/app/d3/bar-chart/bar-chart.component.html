@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-header class="card-header">
+        <h1>d3</h1>
+    </mat-card-header>
+    <mat-card-content >
+        <div class="container">
+            <mat-form-field style="width: 30%;">
+                <mat-label>Enter numbers separated by commas</mat-label>
+                <input matInput [(ngModel)]="inputData"  #input>
+              </mat-form-field>
+            
+            <button (click)="updateChart()">Update Data</button>
+            <div id="chart"></div>
+          </div>
+          
+    </mat-card-content>
+        <mat-card-actions class="card-actions">
+            
+    </mat-card-actions>
+</mat-card>
+

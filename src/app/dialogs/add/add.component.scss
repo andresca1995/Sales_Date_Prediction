@@ -1,0 +1,71 @@
+.mat-mdc-dialog-title{
+    background-color: #37962b;
+}
+.list{
+    background-color: #1db636 !important;
+    color: #FFFFFF !important; 
+  
+  }
+  
+  .add{
+    background-color: #cc3939 !important;
+    color: #FFFFFF !important; 
+  
+  }
+  .mat-mdc-button-disabled .list{
+    background-color: #677c6f !important;
+    color: #FFFFFF !important; 
+  }
+
+.sm-6{
+    width: 50%;
+    padding: 0px 5px;
+}
+.sm-4{
+    width: 33.33%;
+    padding: 0px 5px;
+}
+.sm-12{
+    width: 100%;
+    padding: 0px 5px;
+}
+
+.flex-row{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}       
+.sep{
+    border-color: #df7bcf;
+    width: 100%;
+} 
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn{
+    padding: 0% 10px;
+  }
+
+  .right-align {
+    text-align: right;
+  }
+  
+  input.right-align::-webkit-outer-spin-button,
+  input.right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.right-align {
+    -moz-appearance: textfield;
+  }

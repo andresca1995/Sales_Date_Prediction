@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>Customer AHPOP-Ordes</h2>
+<mat-dialog-content>
+    <table mat-table [dataSource]="datasource" class="expense-table">
+        <ng-container matColumnDef="Orderid">
+            <th mat-header-cell *matHeaderCellDef>Orderid</th>
+            <th mat-cell *matCellDef=" let item">{{item.Orderid}}</th>
+        </ng-container>
+        <ng-container matColumnDef="Requireddate">
+            <th mat-header-cell *matHeaderCellDef>Requireddate</th>
+            <th mat-cell *matCellDef=" let item">{{item.Requireddate | date: 'M-dd-yyyy'}}</th>
+        </ng-container>
+        <ng-container matColumnDef="Shippeddate">
+            <th mat-header-cell *matHeaderCellDef>Shippeddate</th>
+            <th mat-cell *matCellDef=" let item">{{item.Shippeddate | date: 'M-dd-yyyy'}}</th>
+        </ng-container>
+        <ng-container matColumnDef="Shipname">
+            <th mat-header-cell *matHeaderCellDef>Shipname</th>
+            <th mat-cell *matCellDef=" let item">{{item.Shipname}}</th>
+        </ng-container>
+        <ng-container matColumnDef="Shipaddress">
+            <th mat-header-cell *matHeaderCellDef>Shipaddress</th>
+            <th mat-cell *matCellDef=" let item">{{item.Shipaddress}}</th>
+        </ng-container>
+        <ng-container matColumnDef="Shipcity">
+            <th mat-header-cell *matHeaderCellDef>Shipcity</th>
+            <th mat-cell *matCellDef=" let item">{{item.Shipcity}}</th>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displaycolumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displaycolumns"></tr>
+    </table>
+        <mat-paginator [length]="totalitems" 
+            pageSize="pageSize" 
+            [pageSizeOptions]="[5,10,15,20]"> 
+        </mat-paginator>
+        </mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
